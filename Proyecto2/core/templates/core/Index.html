@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css2?family=Krub:wght@300;600&display=swap" rel="stylesheet">
+        <title>Mascoteria las amigas</title>
+        <script src="https://kit.fontawesome.com/f308d8c25e.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}"> 
+        
+  
+      
+    </head>
+<body>
+    
+        <div class="header__superior">
+            <div class="logo">
+                <img src="{% static 'core/img/Mascoteca Las Amigas Logotipos2.gif'%}" alt="">
+            </div>
+            <div class="search">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+        <div class="container__menu">
+
+            <div class="menu">
+                <input type="checkbox" id="check__menu">
+                <label id="label__check" for="check__menu">
+                    <i class="fa-solid fa-bars icon__menu"></i>
+                </label>
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'Index'%}">Inicio</a></li>
+                        <li><a href="#">Perros</a>
+                        <ul>
+                            <li><a href="BandanasPerros.html">Bandanas</a></li>
+                            <li><a href="CorreasPerros.html">Correas</a></li>
+                            <li><a href="IdPerro.html">Identificaciones</a></li>
+                            <li><a href="OtrosPerros.html">Otros</a></li>
+                            
+                        </ul>
+                        </li>
+                        <li><a href="#">Gatos</a>
+                        <ul>
+                            <li><a href="#">Bandanas</a></li>
+                            <li><a href="#">Correas</a></li>
+                            <li><a href="#">Identificaciones</a></li>
+                            <li><a href="#">Otros</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#">Exoticos</a>
+                        <ul>
+                            <li><a href="#">Bandanas</a></li>
+                            <li><a href="#">Correas</a></li>
+                            <li><a href="#">Identificaciones</a></li>
+                            <li><a href="#">Otros</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="Donaciones.html">Donaciones</a></li>
+                        <li><a href="Suscribirse.html">Registrar</a></li>
+                        <li><a href="Contacto.html">Contacto</a></li>
+                    </ul>
+                    
+                </nav>
+            </div>
+
+        </div>
+
+        
+    <!-- CARRUSEL -->
+    <div class="container2">
+        <div class="dog">
+
+            <div class="contenido-dog">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                    </ol>
+
+                <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="img/arnes gato.jpg" alt="arnes" style="width:50%;max-height: 467px;">
+                        </div>
+
+                        <div class="item">
+                            <img src="img/collar perro naranjo.jpg" alt="collar" style="width:50%;max-height: 467px;">
+                        </div>
+
+                        <div class="item">
+                            <img src="img/collar perro rojo.webp" alt="collar" style="width:50%;max-height: 467px;">
+                        </div>
+
+                        <div class="item">
+                            <img src="img/gato bandana.jpg" alt="bandana" style="width:50%;max-height: 467px;">
+                        </div>
+                    </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<footer>
+    <nav id="RedesSociales">
+        <br>
+    <h4>Redes Sociales</h4></a>
+    <br>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.instagram.com/"><img src="img/icons8-instagram-48.png" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.facebook.com/"><img src="img/icons8-facebook-48.png" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.twitter.com/"><img src="img/icons8-twitter-48.png" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.google.com/maps/place/Fosa+de+las+Marianas/@11.3493333,142.190811,15z/data=!4m13!1m7!3m6!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!2sFosa+de+las+Marianas!3b1!8m2!3d11.3493126!4d142.1995658!3m4!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!8m2!3d11.3493126!4d142.1995658"><img src="img/icons8-google-maps-48.png" alt=""></a></button>
+        </nav>
+    <br>
+</footer>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
