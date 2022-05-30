@@ -23,5 +23,5 @@ def CorreasPerros(request):
 def Contacto(request):
     return render(request,'core/Contacto.html')
 
-def BandanaPerros(request):
+def BandanasPerros(request):
     return render(request,'core/BandanasPerros.html')
