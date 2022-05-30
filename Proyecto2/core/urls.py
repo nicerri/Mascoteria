@@ -6,15 +6,15 @@ from .views import IdPerro
 from .views import Donaciones
 from .views import CorreasPerros
 from .views import Contacto
-from .views import BandanaPerros
+from .views import BandanasPerros
 
 urlpatterns = [
-    path('', home,name="index"),
+    path('', home,name="Index"),
     path('Contacto', Contacto,name="Contacto"),
     path('OtrosPerros', OtrosPerros,name="OtrosPerros"),
     path('IdPerro', IdPerro,name="IdPerro"),
     path('Donaciones', Donaciones,name="Donaciones"),
     path('Suscribirse', Suscribirse,name="Suscribirse"),
     path('CorreasPerros', CorreasPerros,name="CorreasPerros"),
-    path('BandanaPerros', BandanaPerros,name="BandanaPerros"),
+    path('BandanasPerros', BandanasPerros,name="BandanasPerros"),
 ]
