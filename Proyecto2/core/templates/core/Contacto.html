@@ -22,7 +22,7 @@
     
         <div class="header__superior">
             <div class="logo">
-                <img src="img/Mascoteca Las Amigas Logotipos2.gif" alt="">
+                <img src="{% static 'core/img/Mascoteca Las Amigas Logotipos2.gif'%}" alt="">
             </div>
             <div class="search">
                 <form class="form-inline my-2 my-lg-0">
@@ -40,13 +40,13 @@
                 </label>
                 <nav>
                     <ul>
-                        <li><a href="Index.html">Inicio</a></li>
+                        <li><a href="{% url 'Index'%}">Inicio</a></li>
                         <li><a href="#">Perros</a>
                         <ul>
-                            <li><a href="BandanasPerros.html">Bandanas</a></li>
-                            <li><a href="CorreasPerros.html">Correas</a></li>
-                            <li><a href="IdPerro.html">Identificaciones</a></li>
-                            <li><a href="OtrosPerros.html">Otros</a></li>
+                            <li><a href="{% url 'BandanasPerros'%}">Bandanas</a></li>
+                            <li><a href="{% url 'CorreasPerros'%}">Correas</a></li>
+                            <li><a href="{% url 'IdPerro'%}">Identificaciones</a></li>
+                            <li><a href="{% url 'OtrosPerros'%}">Otros</a></li>
                             
                         </ul>
                         </li>
@@ -66,9 +66,9 @@
                             <li><a href="#">Otros</a></li>
                         </ul>
                         </li>
-                        <li><a href="Donaciones.html">Donaciones</a></li>
-                        <li><a href="Suscribirse.html">Registrar</a></li>
-                        <li><a href="Contacto.html">Contacto</a></li>
+                        <li><a href="{% url 'Donaciones'%}">Donaciones</a></li>
+                        <li><a href="{% url 'Suscribirse'%}">Registrar</a></li>
+                        <li><a href="{% url 'Contacto'%}">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
