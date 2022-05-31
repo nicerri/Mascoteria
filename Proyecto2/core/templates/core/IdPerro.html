@@ -12,7 +12,7 @@
         <title>Mascoteria las amigas</title>
         <script src="https://kit.fontawesome.com/f308d8c25e.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="estilos.css">
+        <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}"> 
     </head>
     <body>
         <div class="header__superior">
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="container__menu">
-
+<!-- Menu -->
             <div class="menu">
                 <input type="checkbox" id="check__menu">
                 <label id="label__check" for="check__menu">
@@ -47,7 +47,7 @@
                         </li>
                         <li><a href="#">Gatos</a>
                         <ul>
-                            <li><a href="#">Bandanas</a></li>
+                            <li><a href="{% url 'BandanasPerros'%}">Bandanas</a></li>
                             <li><a href="#">Correas</a></li>
                             <li><a href="#">Identificaciones</a></li>
                             <li><a href="#">Otros</a></li>
@@ -71,7 +71,7 @@
             <div id="lista-productos" class="container1">
                 <h1 id="encabezado" class="encabezado">Pedidos en linea</h1>
             </div>
-    
+    <!-- Cards -->
             <div class="card">
                 <div class="face front">
                     <h3><b>Carnet De Identificación Para Mascotas Pvc</b></h3>
@@ -121,6 +121,7 @@
             </div>
 
         </div>
+<!-- Redes Sociales -->
         <footer>
             <nav id="RedesSociales">
                 <br>

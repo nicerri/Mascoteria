@@ -12,7 +12,7 @@ def OtrosPerros(request):
     return render(request,'core/OtrosPerros.html')
 
 def IdPerro(request):
-    return render(request,'core/idperro.html')
+    return render(request,'core/Idperro.html')
 
 def Donaciones(request):
     return render(request,'core/Donaciones.html')
@@ -25,3 +25,7 @@ def Contacto(request):
 
 def BandanasPerros(request):
     return render(request,'core/BandanasPerros.html')
+
+def BandanasGatos(request):
+    return render(request,'core/BandanasGatos.html')
+

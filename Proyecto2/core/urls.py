@@ -7,6 +7,7 @@ from .views import Donaciones
 from .views import CorreasPerros
 from .views import Contacto
 from .views import BandanasPerros
+from .views import BandanasGatos
 
 urlpatterns = [
     path('', home,name="Index"),
@@ -17,4 +18,5 @@ urlpatterns = [
     path('Suscribirse', Suscribirse,name="Suscribirse"),
     path('CorreasPerros', CorreasPerros,name="CorreasPerros"),
     path('BandanasPerros', BandanasPerros,name="BandanasPerros"),
+    path('BandanasGatos', BandanasGatos,name="BandanasGatos"),
 ]
