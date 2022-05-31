@@ -13,7 +13,7 @@
             <title>Mascoteria las amigas</title>
             <script src="https://kit.fontawesome.com/f308d8c25e.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-            <link rel="stylesheet" href="estilos.css">
+            <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}"> 
             
     </head>
     
@@ -29,8 +29,8 @@
                 </form>
             </div>
         </div>
+        <!-- Menu -->
         <div class="container__menu">
-
             <div class="menu">
                 <input type="checkbox" id="check__menu">
                 <label id="label__check" for="check__menu">
@@ -50,7 +50,7 @@
                         </li>
                         <li><a href="#">Gatos</a>
                         <ul>
-                            <li><a href="#">Bandanas</a></li>
+                            <li><a href="{% url 'BandanasPerros'%}">Bandanas</a></li>
                             <li><a href="#">Correas</a></li>
                             <li><a href="#">Identificaciones</a></li>
                             <li><a href="#">Otros</a></li>
@@ -77,7 +77,7 @@
         <div id="lista-productos" class="container1">
             <h1 id="encabezado" class="encabezado">Pedidos en linea</h1>
         </div>
-
+<!-- Cards -->
         <div class="card">
             <div class="face front">
                 <h3><b>Bandana Pet Collar Rojo</b></h3>
@@ -149,19 +149,19 @@
                   </form>
                 </div>
         </div>
-
-        <footer>
-            <nav id="RedesSociales">
-                <br>
-            <h4>Redes Sociales</h4></a>
-            <br>
-                <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.instagram.com/"><img src="{% static 'core/img/icons8-instagram-48.png'%}" alt=""></a></button>
-                <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.facebook.com/"><img src="{% static 'core/img/icons8-facebook-48.png'%}" alt=""></a></button>
-                <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.twitter.com/"><img src="{% static 'core/img/icons8-twitter-48.png'%" alt=""></a></button>
-                <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.google.com/maps/place/Fosa+de+las+Marianas/@11.3493333,142.190811,15z/data=!4m13!1m7!3m6!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!2sFosa+de+las+Marianas!3b1!8m2!3d11.3493126!4d142.1995658!3m4!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!8m2!3d11.3493126!4d142.1995658"><img src="{% static 'core/img/icons8-google-maps-48.png'%" alt=""></a></button>
-                </nav>
-            <br>
-        </footer>
+<!-- Redes Sociales -->
+<footer>
+    <nav id="RedesSociales">
+        <br>
+    <h4>Redes Sociales</h4></a>
+    <br>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.instagram.com/"><img src="{% static 'core/img/icons8-instagram-48.png'%}" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.facebook.com/"><img src="{% static 'core/img/icons8-facebook-48.png'%}" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.twitter.com/"><img src="{% static 'core/img/icons8-twitter-48.png'%}" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.google.com/maps/place/Fosa+de+las+Marianas/@11.3493333,142.190811,15z/data=!4m13!1m7!3m6!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!2sFosa+de+las+Marianas!3b1!8m2!3d11.3493126!4d142.1995658!3m4!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!8m2!3d11.3493126!4d142.1995658"><img src="{% static 'core/img/icons8-google-maps-48.png'%}" alt=""></a></button>
+        </nav>
+    <br>
+</footer>
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
                     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

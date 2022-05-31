@@ -20,7 +20,7 @@
 
     <div class="header__superior">
         <div class="logo">
-            <img src="{% static 'core/img/Mascoteca Las Amigas Logotipos2.gif'%}s" alt="">
+            <img src="{% static 'core/img/Mascoteca Las Amigas Logotipos2.gif'%}" alt="">
         </div>
         <div class="search">
             <form class="form-inline my-2 my-lg-0">
@@ -30,7 +30,7 @@
         </div>
     </div>
     <div class="container__menu">
-
+<!-- Menu -->
         <div class="menu">
             <input type="checkbox" id="check__menu">
             <label id="#label__check" for="check__menu">
@@ -50,7 +50,7 @@
                     </li>
                     <li><a href="#">Gatos</a>
                         <ul>
-                            <li><a href="#">Bandanas</a></li>
+                            <li><a href="{% url 'BandanasPerros'%}">Bandanas</a></li>
                             <li><a href="#">Correas</a></li>
                             <li><a href="#">Identificaciones</a></li>
                             <li><a href="#">Otros</a></li>
@@ -158,7 +158,7 @@
                 <a href="InicioSeccion.html"><button class="formulario__btn">Iniciar Sesion</button></a>
             </div>
         </main>
-        <script src="js/formulario.js"></script>
+        <script src="{% static 'core/js/formulario.js' %}"></script>
         <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 
         </Form>
@@ -166,27 +166,21 @@
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 <br>
+<!-- Redes Sociales -->
 <footer>
     <nav id="RedesSociales">
         <br>
-        <h4>Redes Sociales</h4></a>
-        <br>
-        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.instagram.com/"><img
-                    src="{% static 'core/img/icons8-instagram-48.png'%}" alt=""></a></button>
-        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.facebook.com/"><img
-                    src="{% static 'core/img/icons8-facebook-48.png'%}" alt=""></a></button>
-        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.twitter.com/"><img
-                    src="{% static 'core/img/icons8-twitter-48.png'%" alt=""></a></button>
-        <button class="btn btn-outline-success my-2 my-sm-0"><a
-                href="https://www.google.com/maps/place/Fosa+de+las+Marianas/@11.3493333,142.190811,15z/data=!4m13!1m7!3m6!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!2sFosa+de+las+Marianas!3b1!8m2!3d11.3493126!4d142.1995658!3m4!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!8m2!3d11.3493126!4d142.1995658"><img
-                    src="{% static 'core/img/icons8-google-maps-48.png'%" alt=""></a></button>
-    </nav>
+    <h4>Redes Sociales</h4></a>
+    <br>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.instagram.com/"><img src="{% static 'core/img/icons8-instagram-48.png'%}" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.facebook.com/"><img src="{% static 'core/img/icons8-facebook-48.png'%}" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.twitter.com/"><img src="{% static 'core/img/icons8-twitter-48.png'%}" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.google.com/maps/place/Fosa+de+las+Marianas/@11.3493333,142.190811,15z/data=!4m13!1m7!3m6!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!2sFosa+de+las+Marianas!3b1!8m2!3d11.3493126!4d142.1995658!3m4!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!8m2!3d11.3493126!4d142.1995658"><img src="{% static 'core/img/icons8-google-maps-48.png'%}" alt=""></a></button>
+        </nav>
     <br>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

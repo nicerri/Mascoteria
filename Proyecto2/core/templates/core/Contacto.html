@@ -32,8 +32,8 @@
             </form>
         </div>
     </div>
+    <!-- Menu -->
     <div class="container__menu">
-
         <div class="menu">
             <input type="checkbox" id="check__menu">
             <label id="label__check" for="check__menu">
@@ -53,7 +53,7 @@
                     </li>
                     <li><a href="#">Gatos</a>
                         <ul>
-                            <li><a href="#">Bandanas</a></li>
+                            <li><a href="{% url 'BandanasPerros'%}">Bandanas</a></li>
                             <li><a href="#">Correas</a></li>
                             <li><a href="#">Identificaciones</a></li>
                             <li><a href="#">Otros</a></li>
@@ -75,6 +75,7 @@
         </div>
     </div>
     <br>
+    <!-- Formulario Contacto -->
     <main>
         <div class="container">
             <div class="panel-heading">
@@ -130,21 +131,17 @@
             </div>
         </div>
     </main>
+    <!-- Redes Sociales -->
     <footer>
         <nav id="RedesSociales">
             <br>
-            <h4>Redes Sociales</h4></a>
-            <br>
-            <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.instagram.com/"><img
-                        src="{% static 'core/img/icons8-instagram-48.png'%}" alt=""></a></button>
-            <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.facebook.com/"><img
-                        src="{% static 'core/img/icons8-facebook-48.png'%}" alt=""></a></button>
-            <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.twitter.com/"><img
-                        src="{% static 'core/img/icons8-twitter-48.png'%" alt=""></a></button>
-            <button class="btn btn-outline-success my-2 my-sm-0"><a
-                    href="https://www.google.com/maps/place/Fosa+de+las+Marianas/@11.3493333,142.190811,15z/data=!4m13!1m7!3m6!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!2sFosa+de+las+Marianas!3b1!8m2!3d11.3493126!4d142.1995658!3m4!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!8m2!3d11.3493126!4d142.1995658"><img
-                        src="{% static 'core/img/icons8-google-maps-48.png'%" alt=""></a></button>
-        </nav>
+        <h4>Redes Sociales</h4></a>
+        <br>
+            <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.instagram.com/"><img src="{% static 'core/img/icons8-instagram-48.png'%}" alt=""></a></button>
+            <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.facebook.com/"><img src="{% static 'core/img/icons8-facebook-48.png'%}" alt=""></a></button>
+            <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.twitter.com/"><img src="{% static 'core/img/icons8-twitter-48.png'%}" alt=""></a></button>
+            <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.google.com/maps/place/Fosa+de+las+Marianas/@11.3493333,142.190811,15z/data=!4m13!1m7!3m6!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!2sFosa+de+las+Marianas!3b1!8m2!3d11.3493126!4d142.1995658!3m4!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!8m2!3d11.3493126!4d142.1995658"><img src="{% static 'core/img/icons8-google-maps-48.png'%}" alt=""></a></button>
+            </nav>
         <br>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
