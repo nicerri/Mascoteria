@@ -23,7 +23,7 @@ urlpatterns = [
     path('BandanasPerros', BandanasPerros,name="BandanasPerros"),
     path('BandanasGatos', BandanasGatos,name="BandanasGatos"),
     path('ListaProductos', ListaProductos, name="ListaProductos"),
-    path('FormProductos', FormProductos, name="FormProductos"),
-    path('FormModProductos', FormModProductos, name="FormModProductos"),
+    path('FormProductos/<id>', FormProductos, name="FormProductos"),
+    path('FormModProductos/<id>', FormModProductos, name="FormModProductos"),
 
 ]
