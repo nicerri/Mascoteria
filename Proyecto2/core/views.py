@@ -61,6 +61,6 @@ def FormModProductos(request,id):
     return render(request,'core/FormModProductos.html', contexto)
 
 def FormDelProductos(request,id):
-    producto= Producto.objects.get(producto=id)
+    producto= Producto.objects.get(idProducto=id)
     producto.delete()
     return redirect(to='ListaProductos')

@@ -10,7 +10,7 @@ class Categoria(models.Model):
         return self.nombreCategoria
 
 class Producto(models.Model):
-    idProducto = models.CharField(max_length=6,primary_key=True, verbose_name='Id Producto')
+    idProducto = models.CharField(max_length=6,primary_key=True, verbose_name='IdProducto')
     nombre = models.CharField(max_length=20, null=True, blank=True, verbose_name='Nombre')
     precio = models.CharField(max_length=20, verbose_name='Precio')
     caracteristicas = models.CharField(max_length=20,null=True, blank=True, verbose_name='Caracteristicas')

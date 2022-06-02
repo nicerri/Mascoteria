@@ -78,14 +78,14 @@
         </div>
 <!-- Formulario -->
         <div class="container">
-            <div><h1>Mantenedor de Productos</h1></div>
+            <div><h1>Crear Productos</h1></div>
         <div class="row">
             <form action="" method="post" id="formulario">
                 {% csrf_token %}
                 <div class="form-group">
                     {{ form.as_table }}
                 </div>
-                <input type="submit" class="btn btn-danger" id="agregar" value="agregar">
+                <input type="submit" class="btn btn-danger" id="enviar" value="enviar">
                 <input type="reset" class="btn btn-primary" id="limpiar" value="Limpiar">
                 <div id="error" class="alert alert-success" role="alert">
                     {{ mensaje }}
