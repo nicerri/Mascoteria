@@ -43,31 +43,26 @@ def FormProductos(request):
     }
     if request.method == 'POST':
         formulario = ProductoForm(request.POST)
-
         if formulario.is_valid():
             formulario.save() #insert a la BD
             datos['mensaje'] = 'Se guardó el producto'
         else:
             datos['mensaje'] = 'NO se guardó el producto'
- 
+
     return render(request,"core/FormProductos.html", datos)
 
 def FormModProductos(request, id):
     producto = Producto.objects.get(idProducto = id)
-
     datos = {
         'form': ProductoForm(instance = producto)
     }
-
     if request.method == 'POST':
         formulario = ProductoForm(data = request.POST, instance = producto)
-
         if formulario.is_valid():
             formulario.save() #modificar a la BD
             datos['mensaje'] = 'Se modificó el producto'
         else:
             datos['mensaje'] = 'NO se modificó el producto'
-
     return render(request,"core/FormModProductos.html", datos)
 
 def FormDelProductos(request, id):
