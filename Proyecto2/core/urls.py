@@ -11,6 +11,7 @@ from .views import BandanasGatos
 from .views import ListaProductos
 from .views import FormProductos
 from .views import FormModProductos
+from .views import FormDelProductos
 
 urlpatterns = [
     path('', Index,name="Index"),
@@ -23,7 +24,8 @@ urlpatterns = [
     path('BandanasPerros', BandanasPerros,name="BandanasPerros"),
     path('BandanasGatos', BandanasGatos,name="BandanasGatos"),
     path('ListaProductos', ListaProductos, name="ListaProductos"),
-    path('FormProductos/<id>', FormProductos, name="FormProductos"),
+    path('FormProductos', FormProductos, name="FormProductos"),
     path('FormModProductos/<id>', FormModProductos, name="FormModProductos"),
+    path('FormDelProductos/<id>', FormDelProductos, name="FormDelProductos"),
 
 ]

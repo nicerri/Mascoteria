@@ -271,7 +271,7 @@ nav ul li ul li a:hover {
 /**carrusel**/
 
 .dog {
-    background-image: url(../Proyectos/img/patitas.jpg);
+    background-image: url(../img/patitas.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }

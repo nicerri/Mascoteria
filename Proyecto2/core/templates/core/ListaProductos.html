@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css2?family=Krub:wght@300;600&display=swap" rel="stylesheet">
+        <title>Mascoteria las amigas</title>
+        <script src="https://kit.fontawesome.com/f308d8c25e.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}"> 
+
+      
+    </head>
+<body>
+
+        <div class="header__superior">
+            <div class="logo">
+                <img src="{% static 'core/img/Mascoteca Las Amigas Logotipos2.gif'%}" alt="">
+            </div>
+            <div class="search">
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+        <div class="container__menu">
+<!-- Menu -->
+            <div class="menu">
+                <input type="checkbox" id="check__menu">
+                <label id="label__check" for="check__menu">
+                    <i class="fa-solid fa-bars icon__menu"></i>
+                </label>
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'Index'%}">Inicio</a></li>
+                        <li><a href="#">Perros</a>
+                        <ul>
+                            <li><a href="{% url 'BandanasPerros'%}">Bandanas</a></li>
+                            <li><a href="{% url 'CorreasPerros'%}">Correas</a></li>
+                            <li><a href="{% url 'IdPerro'%}">Identificaciones</a></li>
+                            <li><a href="{% url 'OtrosPerros'%}">Otros</a></li>
+                            
+                        </ul>
+                        </li>
+                        <li><a href="#">Gatos</a>
+                        <ul>
+                            <li><a href="{% url 'BandanasPerros'%}">Bandanas</a></li>
+                            <li><a href="#">Correas</a></li>
+                            <li><a href="#">Identificaciones</a></li>
+                            <li><a href="#">Otros</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="#">Exoticos</a>
+                        <ul>
+                            <li><a href="#">Bandanas</a></li>
+                            <li><a href="#">Correas</a></li>
+                            <li><a href="#">Identificaciones</a></li>
+                            <li><a href="#">Otros</a></li>
+                        </ul>
+                        </li>
+                        <li><a href="{% url 'Donaciones'%}">Donaciones</a></li>
+                        <li><a href="{% url 'Suscribirse'%}">Registrar</a></li>
+                        <li><a href="{% url 'Contacto'%}">Contacto</a></li>
+                        <li><a href="{% url 'ListaProductos'%}">Productos</a></li>
+                    </ul>
+                    
+                </nav>
+            </div>
+
+        </div>
+<!-- Lista-->
+<br>
+<br>
+<br>
+        <div class="container">
+            <div class="row">
+                <h1>Lista de Productos</h1>
+            </div>
+            <div class="row">
+                <div class="row mb-3">
+                    <table class="table table-bordered" id="Productos">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col">idProducto</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Caracteristicas</th>
+                                <th scope="col">Opciones</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                            {% for auxVh in producto %}
+                                <tr>
+                                    <td>{{auxVh.idProducto}}</td>
+                                    <td>{{auxVh.nombre}}</td>
+                                    <td>{{auxVh.precio}}</td>
+                                    <td>{{auxVh.caracteristicas}}</td>
+                                    <td><a href="{% url 'FormModProductos' auxVh.idProducto %}">Modificar</a></td>
+                                    <td><a href="{% url 'FormDelProductos' auxVh.idProducto %}">Eliminar</a></td>
+
+                                </tr>
+                            {% endfor %}
+                        
+                    </table>
+                </div>                
+            </div>
+            <div class="row">
+                <a href="{% url 'FormProductos' %}">Ingresar Nuevo producto</a>
+            </div>
+        </div>
+</body>
+<!-- Redes Sociales -->
+<footer>
+    <nav id="RedesSociales">
+        <br>
+    <h4>Redes Sociales</h4></a>
+    <br>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.instagram.com/"><img src="{% static 'core/img/icons8-instagram-48.png'%}" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.facebook.com/"><img src="{% static 'core/img/icons8-facebook-48.png'%}" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.twitter.com/"><img src="{% static 'core/img/icons8-twitter-48.png'%}" alt=""></a></button>
+        <button class="btn btn-outline-success my-2 my-sm-0"><a href="https://www.google.com/maps/place/Fosa+de+las+Marianas/@11.3493333,142.190811,15z/data=!4m13!1m7!3m6!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!2sFosa+de+las+Marianas!3b1!8m2!3d11.3493126!4d142.1995658!3m4!1s0x67328f3cd57de715:0x1bbe64e7a21aa7fc!8m2!3d11.3493126!4d142.1995658"><img src="{% static 'core/img/icons8-google-maps-48.png'%}" alt=""></a></button>
+        </nav>
+    <br>
+</footer>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
