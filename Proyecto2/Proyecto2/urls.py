@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_macoteca.views import categoria, producto
+from rest_macoteca.viewsLogin import Login
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('core.urls'),)
+    path('',include('core.urls'),),
+    path('Categoria', categoria, name=('categoria')),
+    path('Producto/<id>', producto, name=('producto')),
+    path('login', Login, name=('login')),
 ]
