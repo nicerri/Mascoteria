@@ -1,7 +1,21 @@
 from django import forms
 from django.shortcuts import render, redirect
-from core.forms import ProductoForm
-from core.models import Producto
+from core.forms import LoginForm, ProductoForm, UsuariosForm
+from core.models import Producto, Usuarios
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib import messages
+from rest_framework.decorators import permission_classes
+from django.contrib.auth.models import User, Group
+from rest_framework.authentication import TokenAuthentication
+from rest_mascota.viewsLogin import login as api_login
+#clases de api
+import json
+import requests
+from rest_framework.authtoken.models import Token
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response as apiResponse
+from rest_framework.views import APIView
 # Create your views here.
 
 def Index(request):
@@ -70,3 +84,51 @@ def FormDelProductos(request, id):
     productos = Producto.objects.get(idProducto = id)
     productos.delete() #delete de la BD
     return redirect(to='ListaProductos')
+
+def user_login(request):
+    datos={
+        'form':LoginForm()
+    }
+    if(request.method == 'POST'):
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            usernameU = request.POST['usrN']
+            passwordU = request.POST['pswrdN']
+            user = authenticate(username=usernameU,password=passwordU)
+            if user is not None:
+                login(request,user)
+                return render(request, "core/recuperar.html")
+    return render(request, "core/login.html", datos)
+
+def newUser(request): 
+    datos={
+        'form':UsuariosForm()
+    }
+    if(request.method == 'POST'):
+        form=UsuariosForm(request.POST)
+        if form.is_valid():
+            usernameN = form.cleaned_data.get('usrN')
+            passwordN = form.cleaned_data.get('pswrdN')
+            passwordN2= form.cleaned_data.get('pswrdN2')
+            try:
+                user = User.objects.get(username = usernameN)
+            except User.DoesNotExist:
+                if(passwordN == passwordN2):
+                    user = User.objects.create_user(username=usernameN,email=usernameN,password=passwordN)
+                    user = authenticate(username=usernameN, password=passwordN)
+                    my_group = Group.objects.get(name='Comprador')
+                    user.groups.add(my_group)
+                    login(request,user)
+                    body= {"username": usernameN ,"password" : passwordN} 
+                    r = requests.post('http://localhost:8000/api/login',data=json.dumps(body))
+                    print(r.text)
+                    return render(request, "core/Index.html")
+    return render(request,"core/newUser.html",datos)
+
+def recuperar(request):
+    return render(request,"core/Recuperar.html")
+
+def cerrarsesion(request):
+    logout(request)
+    return redirect(user_login)
+    
