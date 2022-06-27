@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'rest_framework',
     'rest_mascota',
     'core',
@@ -53,10 +52,6 @@ ROOT_URLCONF = 'Proyecto2.urls'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend'
-=======
-    'core',
-    'rest_framework.authtoken',
->>>>>>> 5361b85d5ec09c8ba284a64d7147b80cb985d380
 ]
 
 MIDDLEWARE = [

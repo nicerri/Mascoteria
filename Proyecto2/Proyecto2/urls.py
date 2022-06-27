@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-<<<<<<< HEAD
 from rest_mascota.api import UserAPI
 
 urlpatterns = [
@@ -23,16 +22,4 @@ urlpatterns = [
     path('API/', include('rest_mascota.urls')),
     path('',include('core.urls')),
     path('api/1.0/create_user/', UserAPI.as_view(), name = "api_create_user"),
-=======
-from rest_macoteca.views import categoria, producto
-from rest_macoteca.viewsLogin import Login
-
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include('core.urls'),),
-    path('Categoria', categoria, name=('categoria')),
-    path('Producto/<id>', producto, name=('producto')),
-    path('login', Login, name=('login')),
->>>>>>> 5361b85d5ec09c8ba284a64d7147b80cb985d380
 ]
