@@ -85,12 +85,13 @@
             </div>
             <div class="row">
                 <div class="row mb-3">
-                    <table class="table table-bordered" id="Productos">
+                    <table class="table table-bordered" id="Productos" >
                         <thead class="table-dark">
                             <tr>
                                 <th scope="col">idProducto</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Precio</th>
+                                <th scope="col">Imagen</th>
                                 <th scope="col">Caracteristicas</th>
                                 <th scope="col">Opciones</th>
                                 <th scope="col"></th>
@@ -101,6 +102,7 @@
                                     <td>{{auxVh.idProducto}}</td>
                                     <td>{{auxVh.nombre}}</td>
                                     <td>{{auxVh.precio}}</td>
+                                    <td><img src="/{{auxVh.img}}" alt="Foto" width="250"></td>
                                     <td>{{auxVh.caracteristicas}}</td>
                                     <td><a href="{% url 'FormModProductos' auxVh.idProducto %}">Modificar</a></td>
                                     <td><a href="{% url 'FormDelProductos' auxVh.idProducto %}">Eliminar</a></td>

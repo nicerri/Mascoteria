@@ -1,6 +1,7 @@
+from django import forms
 from django.shortcuts import render, redirect
 from core.forms import ProductoForm
-from .models import Producto
+from core.models import Producto
 # Create your views here.
 
 def Index(request):
@@ -42,7 +43,7 @@ def FormProductos(request):
         'form': ProductoForm()
     }
     if request.method == 'POST':
-        formulario = ProductoForm(request.POST)
+        formulario = ProductoForm(request.POST or None, request.FILES or None)
         if formulario.is_valid():
             formulario.save() #insert a la BD
             datos['mensaje'] = 'Se guardó el producto'
@@ -57,7 +58,7 @@ def FormModProductos(request, id):
         'form': ProductoForm(instance = producto)
     }
     if request.method == 'POST':
-        formulario = ProductoForm(data = request.POST, instance = producto)
+        formulario = ProductoForm(request.POST or None, request.FILES or None, instance = producto)
         if formulario.is_valid():
             formulario.save() #modificar a la BD
             datos['mensaje'] = 'Se modificó el producto'

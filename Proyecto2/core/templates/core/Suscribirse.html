@@ -1,4 +1,5 @@
 {% load static %}
+{% load socialaccount %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -156,7 +157,15 @@
                     <br>
                 </form>
                 <br>
-                <a href="InicioSeccion.html"><button class="formulario__btn">Iniciar Sesion</button></a>
+                  <div class="g-sign-in-button">
+                    <div class=content-wrapper>
+                        <div class="logo-wrapper">
+                            <img src="{% static 'core/img/icons8-logo-de-google-48.png' %}">
+                        </div>
+                        <span class='text-container'>
+                        <span><a href="{% provider_login_url 'google' %}">Iniciar Sesion</a></span>
+                    </span>
+                    </div>
             </div>
         </main>
         <script src="{% static 'core/js/formulario.js' %}"></script>

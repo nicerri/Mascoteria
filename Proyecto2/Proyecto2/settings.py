@@ -37,7 +37,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core'
+    'rest_framework',
+    'rest_mascota',
+    'core',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+]
+
+ROOT_URLCONF = 'Proyecto2.urls'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend'
 ]
 
 MIDDLEWARE = [
@@ -50,7 +64,27 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Proyecto2.urls'
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = "http://127.0.0.1:8000/"
+# Additional configuration settings
+SOCIALACCOUNT_QUERY_EMAIL = True
+ACCOUNT_LOGOUT_ON_GET= True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_REQUIRED = True
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
+
 
 TEMPLATES = [
     {
@@ -67,6 +101,12 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK={
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 WSGI_APPLICATION = 'Proyecto2.wsgi.application'
 
@@ -121,4 +161,6 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

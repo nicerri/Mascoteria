@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_mascota.api import UserAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('core.urls'),)
+    path('API/', include('rest_mascota.urls')),
+    path('',include('core.urls')),
+    path('api/1.0/create_user/', UserAPI.as_view(), name = "api_create_user"),
 ]
