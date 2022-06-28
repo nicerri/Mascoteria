@@ -14,8 +14,8 @@ from .views import ListaProductos
 from .views import FormProductos
 from .views import FormModProductos
 from .views import FormDelProductos
+from .views import Recuperar
 from .views import user_login
-from .views import recuperar
 from .views import newUser
 from django.views.generic import TemplateView
 from django.contrib.auth.views import LogoutView
@@ -27,9 +27,9 @@ urlpatterns = [
     path('Contacto', Contacto,name="Contacto"),
     path('OtrosPerros', OtrosPerros,name="OtrosPerros"),
     path('IdPerro', IdPerro,name="IdPerro"),
-    path('Login', user_login, name='Login'),
+    path('login', user_login, name='login'),
     path('newUser/', newUser, name='newUser'),
-    path('Recuperar/', recuperar, name='Recuperar'),
+    path('Recuperar/', Recuperar, name='Recuperar'),
     path('logout/',cerrarsesion, name='cerrarsesion'),
     path('Donaciones', Donaciones,name="Donaciones"),
     path('Suscribirse', Suscribirse,name="Suscribirse"),

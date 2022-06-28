@@ -300,6 +300,12 @@ legend {
 }
 
 /**formulario**/
+input[type="text"],
+input[type="email"],
+textarea:hover{
+    box-shadow: 3px 0px 30px #000000;
+}
+
 
 input[type="text"],
 input[type="email"],
@@ -309,7 +315,6 @@ textarea {
     color: #0a0707;
     display: inline-flex;
     padding: 10px;
-    width: 100%;
     font-size: 1.2em;
     margin-bottom: 1%;
 }
@@ -726,23 +731,25 @@ input:focus :-ms-input-placeholder {
 .login-text .fa-stack-1x {
     color: black;
 }
+.login-username,
+.login-password:hover{
+box-shadow: 3px 0px 30px #000000;
+}
 
 .login-username,
 .login-password {
-    background: transparent;
-    border: 0 solid;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    color: white;
+    border: 1px solid #000407;
+    border-radius: 3px;
+    width: 100%;
     display: block;
     margin: 1rem;
-    padding: 0.5rem;
+    padding: 10px;
     transition: 250ms background ease-in;
     width: calc(100% - 3rem);
 }
 
 .login-username:focus,
 .login-password:focus {
-    background: white;
     color: black;
     transition: 250ms background ease-in;
 }
@@ -752,11 +759,10 @@ input:focus :-ms-input-placeholder {
     color: white;
     cursor: pointer;
     display: block;
-    font-size: 75%;
+    font-size: 20px;
     left: 0;
     opacity: 0.6;
     padding: 0.5rem;
-    position: absolute;
     text-align: center;
     width: 100%;
 }
@@ -766,11 +772,10 @@ input:focus :-ms-input-placeholder {
     color: white;
     cursor: pointer;
     display: block;
-    font-size: 75%;
+    font-size: 20px;
     left: 0;
     opacity: 0.6;
     padding: 0.5rem;
-    position: absolute;
     text-align: center;
     width: 100%;
 }
@@ -801,13 +806,6 @@ input:focus :-ms-input-placeholder {
     transition: 250ms background ease-in;
 }
 
-[class*=underlay] {
-    left: 0;
-    min-height: 100%;
-    min-width: 100%;
-    position: fixed;
-    top: 0;
-}
 
 #mensajeError,
 #mensajeError1,
@@ -823,4 +821,19 @@ input:focus :-ms-input-placeholder {
     margin: 2vh;
     padding: 2vh;
     justify-content: center;
+}
+
+.formulario__btn {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	height: 40px;
+	line-height: 100%;
+	width: 100%;
+	background: #000000;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: .1s ease all;
+	font-size: 20px;
 }

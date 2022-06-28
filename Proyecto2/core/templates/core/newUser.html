@@ -12,7 +12,6 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@300;600&display=swap" rel="stylesheet">
     <title>Mascoteria las amigas</title>
-    <script src="https://kit.fontawesome.com/f308d8c25e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}">
 </head>
@@ -69,7 +68,7 @@
                     <li><a href="{% url 'Suscribirse'%}">Registrar</a></li>
                     <li><a href="{% url 'Contacto'%}">Contacto</a></li>
                     <li><a href="{% url 'ListaProductos'%}">Productos</a></li>
-                    <li><a href="{% url 'Login'%}">Login</a></li>
+                    <li><a href="{% url 'login'%}">Login</a></li>
                 </ul>
             </nav>
         </div>
@@ -82,18 +81,12 @@
     <form class="login-form" id="creaUsuario" method="POST">
         {%csrf_token%}
         {{form.as_p}}
-
-        <input type="submit" name="create" value="Crear Usuario" class="login-submit" id="crearUsr" />
+        <br><br>
+        <button type="submit" name="create" value="Crear Usuario" class="formulario__btn" id="crearUsr" />Registrarse</button>
         <p class="login-text" id="mensajeError1">Usuario invalido</p>
         <p class="login-text" id="mensajeErrorPass"> Las contraseñas no coinciden</p>
     </form>
     <a href="{% url 'login'%}" class="login-new-user"> Ya tienes usuario? Log-in</a>
-    <div class="underlay-photo"></div>
-    <div class="underlay-black"></div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </div>
 <br>
 <!-- Redes Sociales -->
@@ -110,10 +103,8 @@
     <br>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{%static 'core/js/scripts.js'%}"></script>
 </body>
-
 </html>

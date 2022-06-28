@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_mascota',
     'core',
+    'rest_framework.authtoken',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -66,12 +67,9 @@ MIDDLEWARE = [
 
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = "http://127.0.0.1:8000/"
+LOGIN_REDIRECT_URL = "/"
 # Additional configuration settings
-SOCIALACCOUNT_QUERY_EMAIL = True
-ACCOUNT_LOGOUT_ON_GET= True
-ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_EMAIL_REQUIRED = True
+
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -89,7 +87,7 @@ SOCIALACCOUNT_PROVIDERS = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'core/templates/core'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,12 +100,17 @@ TEMPLATES = [
     },
 ]
 
-REST_FRAMEWORK={
+REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':[
+        #'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
     ],
+    'DEFAULT_PARSER_CLASSES': (
+    'rest_framework.parsers.JSONParser',
+    'rest_framework.parsers.FormParser',
+    'rest_framework.parsers.MultiPartParser',
+),
 }
-
 WSGI_APPLICATION = 'Proyecto2.wsgi.application'
 
 

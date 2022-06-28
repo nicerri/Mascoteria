@@ -1,3 +1,6 @@
+from telnetlib import LOGOUT
+from tokenize import group
+from turtle import delay
 from django import forms
 from django.shortcuts import render, redirect
 from core.forms import LoginForm, ProductoForm, UsuariosForm
@@ -5,6 +8,8 @@ from core.models import Producto, Usuarios
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpRequest, HttpResponseRedirect
 from rest_framework.decorators import permission_classes
 from django.contrib.auth.models import User, Group
 from rest_framework.authentication import TokenAuthentication
@@ -85,6 +90,11 @@ def FormDelProductos(request, id):
     productos.delete() #delete de la BD
     return redirect(to='ListaProductos')
 
+
+
+def is_staff(user):
+    return user.is_authenticated and user.Cliente
+
 def user_login(request):
     datos={
         'form':LoginForm()
@@ -97,8 +107,11 @@ def user_login(request):
             user = authenticate(username=usernameU,password=passwordU)
             if user is not None:
                 login(request,user)
-                return render(request, "core/recuperar.html")
+                return render(request, "core/Recuperar.html")
     return render(request, "core/login.html", datos)
+
+def Recuperar(request):
+    return render(request,"core/Recuperar.html")
 
 def newUser(request): 
     datos={
@@ -120,13 +133,10 @@ def newUser(request):
                     user.groups.add(my_group)
                     login(request,user)
                     body= {"username": usernameN ,"password" : passwordN} 
-                    r = requests.post('http://localhost:8000/api/login',data=json.dumps(body))
+                    r = requests.post('http://http://127.0.0.1:8000/api/login',data=json.dumps(body))
                     print(r.text)
                     return render(request, "core/Index.html")
     return render(request,"core/newUser.html",datos)
-
-def recuperar(request):
-    return render(request,"core/Recuperar.html")
 
 def cerrarsesion(request):
     logout(request)
