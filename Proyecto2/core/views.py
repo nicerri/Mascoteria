@@ -29,29 +29,21 @@ def Index(request):
 def Suscribirse(request):
     return render(request,'core/Suscribirse.html')
 
-def OtrosPerros(request):
-    return render(request,'core/OtrosPerros.html')
-
-def IdPerro(request):
-    return render(request,'core/Idperro.html')
-
 def Donaciones(request):
     return render(request,'core/Donaciones.html')
 
-def CorreasPerros(request):
-    return render(request,'core/CorreasPerros.html')
+def Productos(request):
+    return render(request,'core/Productos.html')
 
 def Contacto(request):
     return render(request,'core/Contacto.html')
 
-def BandanasPerros(request):
-    return render(request,'core/BandanasPerros.html')
+def is_staff(user):
+    return user.is_authenticate and user.Cliente
 
-def BandanasGatos(request):
-    return render(request,'core/BandanasGatos.html')
-
+@user_passes_test(is_staff)
 def ListaProductos(request):
-    Productos =  Producto.objects.all() #select * from Producto
+    Productos =  Producto.objects.all()
     contexto = {
         'producto': Productos
     }
@@ -129,11 +121,9 @@ def newUser(request):
                 if(passwordN == passwordN2):
                     user = User.objects.create_user(username=usernameN,email=usernameN,password=passwordN)
                     user = authenticate(username=usernameN, password=passwordN)
-                    my_group = Group.objects.get(name='Comprador')
-                    user.groups.add(my_group)
                     login(request,user)
                     body= {"username": usernameN ,"password" : passwordN} 
-                    r = requests.post('http://http://127.0.0.1:8000/api/login',data=json.dumps(body))
+                    r = requests.post('http://127.0.0.1:8000/API/login',data=json.dumps(body))
                     print(r.text)
                     return render(request, "core/Index.html")
     return render(request,"core/newUser.html",datos)

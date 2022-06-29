@@ -21,5 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('API/', include('rest_mascota.urls')),
     path('',include('core.urls')),
-    path('api/1.0/create_user/', UserAPI.as_view(), name = "api_create_user"),
 ]
