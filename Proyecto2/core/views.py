@@ -38,8 +38,10 @@ def Productos(request):
 def Contacto(request):
     return render(request,'core/Contacto.html')
 
+
 def is_staff(user):
-    return user.is_authenticate and user.Cliente
+    return user.is_authenticated
+
 
 @user_passes_test(is_staff)
 def ListaProductos(request):
@@ -81,11 +83,6 @@ def FormDelProductos(request, id):
     productos = Producto.objects.get(idProducto = id)
     productos.delete() #delete de la BD
     return redirect(to='ListaProductos')
-
-
-
-def is_staff(user):
-    return user.is_authenticated and user.Cliente
 
 def user_login(request):
     datos={
